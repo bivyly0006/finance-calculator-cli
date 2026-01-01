@@ -44,12 +44,7 @@ public class Main {
             }else{
                 System.out.println("Invalid choice. Please try again.");
             }
-
-            {
-                scanner.close();
-            }
-
         }
-
+        scanner.close();
     }
 }
