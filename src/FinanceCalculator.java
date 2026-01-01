@@ -8,35 +8,46 @@ public class Main {
 
         Double totalIncome = 0.0;
         Double totalExpense = 0.0;
-        Double balance ;
         int Choice;
 
-        System.out.println("Welcome!");
+        System.out.println("=== Personal Finance Calculator ===");
 
-        System.out.println("1. Add Income");
-        System.out.println("2. Add Expense");
-        System.out.println("3. View Balance");
-        System.out.println("4. Exit");
-
-
-        System.out.print("Enter choice: ");
-        Choice = scanner.nextInt();
-
-        while(Choice>=1 && Choice<4){
-
-                System.out.print("Enter income amount:'eg 5000.00'  ");
-                totalIncome = scanner.nextDouble();
+        while(true) {
+            System.out.println("1. Add Income");
+            System.out.println("2. Add Expense");
+            System.out.println("3. View Balance");
+            System.out.println("4. Exit");
 
 
+            System.out.print("Enter choice: ");
+            Choice = scanner.nextInt();
 
-                System.out.print("Enter expense amount:'eg 5000.00'  ");
-                totalExpense = scanner.nextDouble();
+            if (Choice==1){
+                System.out.print("Enter income amount: ");
+                double income = scanner.nextDouble();
+                totalIncome += income;
+                System.out.println("Income added successfully!");
+            }else if (Choice==2){
+                System.out.print("Enter expense amount: ");
+                double expense = scanner.nextDouble();
+                totalExpense += expense;
+                System.out.println("Expense added successfully!");
+            }else if(Choice==3){
+                double balance = totalIncome - totalExpense;
+                System.out.println("\n___ Financial Summary ___");
+                System.out.println("Total Income: $"+totalIncome);
+                System.out.println("Total Expense: $"+totalExpense);
+                System.out.println("Balance: $"+balance);
+            }else if(Choice==4){
+                System.out.println("Thank you for using Finance Calculator!");
+                break;
+            }else{
+                System.out.println("Invalid choice. Please try again.");
+            }
 
-
-
-                balance=totalIncome-totalExpense;
-                System.out.println("Balance = "+balance);
-
+            {
+                scanner.close();
+            }
 
         }
 
